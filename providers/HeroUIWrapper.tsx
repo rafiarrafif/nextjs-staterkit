@@ -2,6 +2,7 @@
 
 import { HeroUIProvider } from "@heroui/react";
 import { useRouter } from "next/navigation";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 import React, { useEffect, useState } from "react";
 
 const HeroUIWrapper = ({
@@ -16,7 +17,11 @@ const HeroUIWrapper = ({
 
   return (
     <HeroUIProvider navigate={router.push}>
-      <main>{children}</main>
+      {mounted && (
+        <NextThemesProvider attribute="class" defaultTheme="light">
+          <>{children}</>
+        </NextThemesProvider>
+      )}
     </HeroUIProvider>
   );
 };
