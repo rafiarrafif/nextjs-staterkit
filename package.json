@@ -7,7 +7,8 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "commit": "bun x git-cz"
+    "commit": "bun x git-cz",
+    "push": "bun scripts/git-multipush.ts"
   },
   "dependencies": {
     "react": "19.1.0",
