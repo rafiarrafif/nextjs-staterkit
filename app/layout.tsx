@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import HeroUIWrapper from "@/providers/HeroUIWrapper";
+import NextTopLoader from "nextjs-toploader";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <NextTopLoader easing="ease" showSpinner={false} />
         <HeroUIWrapper>{children}</HeroUIWrapper>
       </body>
     </html>
